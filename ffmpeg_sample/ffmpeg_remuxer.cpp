@@ -135,7 +135,9 @@ end:
     return 0;
 }
 
+#if 0
 int main(int argc, char **argv)
 {
     remuxer();
 }
+#endif
