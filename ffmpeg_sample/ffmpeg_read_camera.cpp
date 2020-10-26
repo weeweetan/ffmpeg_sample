@@ -107,8 +107,8 @@ void show_avfoundation_device()
 
 }
 
-#if 0
-int main(int argc, char **argv)
+
+int read_camera()
 {
     AVFormatContext *fmt_ctx = NULL;
     int i, video_index;
@@ -232,7 +232,7 @@ int main(int argc, char **argv)
     int ret, got_picture;
 
     AVPacket *packet = (AVPacket *)av_malloc(sizeof(AVPacket));
-    
+
 #if OUTPUT_YUV420P
     FILE *fp_yuv = fopen("output.yuv", "wb+");
 #endif
@@ -275,12 +275,12 @@ int main(int argc, char **argv)
 #if OUTPUT_YUV420P
                         int y_size = codec_ctx->width * codec_ctx->height;
                         fwrite(frame_yuv->data[0], 1, y_size, fp_yuv);      // Y
-                        fwrite(frame_yuv->data[1], 1, y_size/4, fp_yuv);    // U
-                        fwrite(frame_yuv->data[2], 1, y_size/4, fp_yuv);    // V
+                        fwrite(frame_yuv->data[1], 1, y_size / 4, fp_yuv);    // U
+                        fwrite(frame_yuv->data[2], 1, y_size / 4, fp_yuv);    // V
 #endif
                         SDL_UnlockYUVOverlay(bmp);
                         SDL_DisplayYUVOverlay(bmp, &rect);
-                        
+
                     }
                 }
                 av_free_packet(packet);
@@ -311,5 +311,12 @@ int main(int argc, char **argv)
     avcodec_close(codec_ctx);
     avformat_close_input(&fmt_ctx);
     return 0;
+}
+
+
+#if 0
+int main(int argc, char **argv)
+{
+    read_camera();
 }
 #endif

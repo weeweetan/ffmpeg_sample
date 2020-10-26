@@ -58,7 +58,8 @@ int flush_encoder(AVFormatContext *fmt_ctx, unsigned int stream_index)
     return ret;
 }
 
-int main(int argc, char **argv)
+
+int encoder()
 {
     AVFormatContext *fmt_ctx;
     AVOutputFormat *fmt;
@@ -160,7 +161,7 @@ int main(int argc, char **argv)
 
     for (int i = 0; i < frame_num; i++)
     {
-        if (fread(picture_buf, 1, y_size * 3 / 2, in_file) <=0)
+        if (fread(picture_buf, 1, y_size * 3 / 2, in_file) <= 0)
         {
             printf("Failed to read raw data!\n");
             return -1;
@@ -216,4 +217,10 @@ int main(int argc, char **argv)
     fclose(in_file);
 
     return 0;
+}
+
+
+int main(int argc, char **argv)
+{
+    encoder();
 }
