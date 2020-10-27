@@ -135,6 +135,7 @@
     <ClCompile Include="ffmpeg_muxer.cpp" />
     <ClCompile Include="ffmpeg_read_camera.cpp" />
     <ClCompile Include="ffmpeg_remuxer.cpp" />
+    <ClCompile Include="ffmpeg_streamer.cpp" />
     <ClCompile Include="ffmpeg_video_encoder.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

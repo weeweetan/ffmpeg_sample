@@ -220,7 +220,7 @@ int encoder()
 }
 
 
-int main(int argc, char **argv)
-{
-    encoder();
-}
+//int main(int argc, char **argv)
+//{
+//    encoder();
+//}
